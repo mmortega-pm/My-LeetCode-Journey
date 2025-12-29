@@ -1,0 +1,3 @@
+SELECT DATE_FORMAT(trans_date, '%Y-%m') AS month, country, COUNT(id) AS trans_count, SUM(IF(state = 'approved', 1, 0)) AS approved_count, SUM(amount) AS trans_total_amount, SUM(IF(state = 'approved', amount, 0)) approved_total_amount # Reformat the trans_date so taht it no longer shows the day. Count the ID's for the total number of transactions. Do a sum off of an IF statement to check how many were approved. Do the same for approved total amounts, but instead add up the amount value for each line that is approvced.  country is simply the country.
+FROM Transactions #Use the Transactions table.
+GROUP BY month, country; #Group by month and then by country, as requested.
