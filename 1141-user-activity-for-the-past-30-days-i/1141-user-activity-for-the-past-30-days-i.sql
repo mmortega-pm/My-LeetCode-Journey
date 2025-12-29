@@ -1,0 +1,4 @@
+SELECT activity_date AS day, COUNT(DISTINCT user_id) AS active_users #Provide requested values and rename them as well. For active users, we will count how many users there are, and doing so with distinct sine there are multiple activity types for the same id.
+FROM Activity #Use the appropriate table.
+WHERE activity_date BETWEEN DATE_SUB('2019-07-27', INTERVAL 29 DAY) AND '2019-07-27' #Filter for activities that happened during the 30 day interval we were provided. Use DATE SUB to figure out the start date of the between. You could technically calculate yourself and add here as the start of the range.
+GROUP BY activity_date; #Group by activity date
