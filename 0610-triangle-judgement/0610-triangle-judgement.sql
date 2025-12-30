@@ -1,0 +1,2 @@
+SELECT x, y, z, IF(x+y>z AND y+z>x AND x+z>y, 'Yes', 'No') AS triangle #Provide requested values and calculate to ensure that a triangle can be made based on the length of the sides. 2 sides of a triangle should always be bigger, together, than the 3rd side. Test for the three versions with an IF Statement.
+FROM Triangle; #Use the Triangle table.
