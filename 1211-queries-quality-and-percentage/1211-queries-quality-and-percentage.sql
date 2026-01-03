@@ -1,0 +1,3 @@
+SELECT query_name, ROUND(AVG(rating / position),2) AS quality, ROUND((SUM(IF(rating<3,1,0))/COUNT(*))*100,2) AS poor_query_percentage #Provide all values requested. Focus on query name for the grouping. Calculate the quality  based on the formula provided, round. Do the same for PQP. Count how many fit the criteria of <3 and then divide by total; convert to percentage.
+FROM Queries #Use the single table.
+GROUP BY query_name; #Make sure to group the result or we'll get multiple lines.
